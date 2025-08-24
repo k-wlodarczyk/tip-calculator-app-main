@@ -1,0 +1,56 @@
+@media (hover: hover) and (pointer: fine) {
+  .reset-btn:hover {
+    color: hsl(184, 94%, 7%);
+    background-color: hsl(172, 89%, 57%);
+  }
+}
+
+@media (max-width: 950px) {
+  .header {
+    margin-top: var(--spacing-6);
+  }
+
+  .container {
+    margin-top: var(--spacing-4);
+    max-width: 70rem;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    max-width: 60rem;
+  }
+}
+
+@media (max-width: 570px) {
+  html {
+    font-size: 40%;
+  }
+
+  .bill-info {
+    gap: var(--spacing-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: var(--spacing-12);
+  }
+
+  .bill-card {
+    grid-template-columns: 1fr;
+  }
+
+  .bill-info-tips-btns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bill-info-tips button,
+  .bill-info-tips input {
+    width: 85%;
+  }
+}

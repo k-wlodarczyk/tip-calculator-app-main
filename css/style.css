@@ -64,6 +64,8 @@ body {
 .input-with-icon input {
   background: transparent;
   text-align: right;
+  flex: 1;
+  padding-right: var(--spacing-2);
 }
 
 .input-with-icon input,
@@ -71,6 +73,12 @@ input {
   border: 1px solid transparent;
   font-family: inherit;
   font-size: var(--font-base);
+  outline: none;
+  cursor: pointer;
+}
+
+.input-with-icon:focus-within {
+  outline: 2px solid hsl(184, 14%, 56%);
 }
 
 .btn {
@@ -78,6 +86,7 @@ input {
   background-color: hsl(183, 100%, 15%);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
   color: #fff;
   font-weight: 600;
   font-family: inherit;
@@ -148,17 +157,6 @@ input {
   width: 100%;
 }
 
-.reset-btn {
-  width: 100%;
-  margin-top: auto;
-  padding: var(--spacing-2) var(--spacing-4);
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(172, 67%, 45%);
-}
-
 .tip-btn:hover {
   color: hsl(183, 100%, 15%);
   background-color: hsl(172, 67%, 45%);
@@ -167,6 +165,7 @@ input {
 
 .custom-tip-input {
   text-align: center;
+  padding: var(--spacing-2) var(--spacing-2);
 }
 
 .bill-info-label,
@@ -206,4 +205,21 @@ input {
 .calculated-tip-info-value {
   font-size: var(--font-3xl);
   color: hsl(172, 67%, 45%);
+}
+
+.reset-btn {
+  width: 100%;
+  margin-top: auto;
+  padding: var(--spacing-2) var(--spacing-4);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  transition: 0.2s ease all;
+}
+
+.reset-btn:active {
+  color: hsl(184, 94%, 7%);
+  background-color: hsl(172, 89%, 57%);
 }
