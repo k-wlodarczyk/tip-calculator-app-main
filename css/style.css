@@ -81,6 +81,10 @@ input {
   outline: 2px solid hsl(184, 14%, 56%);
 }
 
+.input-with-icon.invalid {
+  outline: 2px solid hsl(0, 100%, 50%);
+}
+
 .btn {
   padding: var(--spacing-2) var(--spacing-4);
   background-color: hsl(183, 100%, 15%);
@@ -157,9 +161,13 @@ input {
   width: 100%;
 }
 
-.tip-btn:hover {
+.tip-btn:hover,
+.bill-info-tips-btns .active {
   color: hsl(183, 100%, 15%);
   background-color: hsl(172, 67%, 45%);
+}
+
+.tip-btn:hover {
   cursor: pointer;
 }
 
