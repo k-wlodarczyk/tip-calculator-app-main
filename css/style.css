@@ -98,6 +98,16 @@ input {
   transition: 0.2s ease all;
 }
 
+.link-btn:link,
+.link-btn:visited {
+  text-decoration: none;
+}
+
+.btn-icon {
+  height: var(--font-base);
+  width: var(--font-base);
+}
+
 /* ----- HEADER ----- */
 .header {
   margin-top: var(--spacing-16);
@@ -140,6 +150,10 @@ input {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-5);
+}
+
+.bill-info-bill {
+  margin-top: var(--spacing-4);
 }
 
 .bill-info-bill,
@@ -211,7 +225,7 @@ input {
 }
 
 .calculated-tip-info-value {
-  font-size: var(--font-3xl);
+  font-size: var(--font-2xl);
   color: hsl(172, 67%, 45%);
 }
 
@@ -230,4 +244,21 @@ input {
 .reset-btn:active {
   color: hsl(184, 94%, 7%);
   background-color: hsl(172, 89%, 57%);
+}
+
+/* LINKS */
+.links-section {
+  margin-top: var(--spacing-8);
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.github-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
 }

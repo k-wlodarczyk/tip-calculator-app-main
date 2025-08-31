@@ -1,0 +1,469 @@
+[
+  {
+    "section": "Bill field",
+    "description": "Set integer value in Bill field.",
+    "steps": ["Click Bill field", "Set field value: 3"],
+    "expected": "Bill field shows value 3.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Set float value with 2 decimals in Bill field",
+    "steps": [
+      "Click Bill field",
+      "Set field value: 3.3",
+      "Set field value: 3.33"
+    ],
+    "expected": "After step 1, Bill field shows value 3.3 and after step 2 the field shows 3.33.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Bill field input changes separator from comma to dot",
+    "steps": ["Click Bill field", "Set field value: 3,3"],
+    "expected": "After typing comma, it is changed to dot. Bill field shows value 3.3.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Try to input more than one decimal separator in Bill field",
+    "steps": [
+      "Click Bill field",
+      "Set field value: 3.3",
+      "Set field value: 3.3.3"
+    ],
+    "expected": "After step 1, Bill field shows value 3.3. After step 2, second decimal separator is not inserted. Bill field still shows value 3.3.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Try to set float value with more than 2 decimals in Bill field",
+    "steps": ["Click Bill field", "Set field value: 3.333"],
+    "expected": "After 2 decimals, other decimals cannot be typed. Bill field shows value 3.33.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Try to set value higher than 999 999.99",
+    "steps": [
+      "Click Bill field",
+      "Set field value: 1 000 000",
+      "Clear field value",
+      "Start typing with .99 and then type 9s (9.99 -> 99.99 -> 999.99 ...)"
+    ],
+    "expected": "There is no way to set value higher than 999 999.99. In step 2 max field value will be 100 000 and after step 4 will be 999 999.99.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Try to set string value in Bill field",
+    "steps": ["Click Bill field", "Set field value: abc"],
+    "expected": "Only digits are allowed. Bill field empty. Invalid characters are not typed into field.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Set value 0 or negative value in Bill field",
+    "steps": [
+      "Click Bill field",
+      "Set field value: 0",
+      "Change field value to: -1"
+    ],
+    "expected": "Bill field requires number higher than 0. After typing 0 or -1 field gets a red frame. Field shows typed value.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Remove red frame after clearing field or setting to positive.",
+    "steps": [
+      "Click Bill field",
+      "Set field value: 0",
+      "Clear field value",
+      "Set field value: 0",
+      "Change field value to: 1"
+    ],
+    "expected": "After steps 2 and 4 the field gets a red frame (invalid value). After changing field to valid value (positive or empty) frame is removed.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Set a tip button active.",
+    "steps": ["Click any tip button"],
+    "expected": "After clicking a button, the button will change the background to turquoise.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Remove active state from a button after clicking another button.",
+    "steps": ["Click tip button 5%", "Click tip button 10%"],
+    "expected": "After step 1 active button is 5%. After clicking 10% button, 5% button is no longer active. 10% tip button becomes the active one.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Clicking the active button",
+    "steps": ["Click tip button 5%", "Click tip button 5% again"],
+    "expected": "Clicking the active button will keep it active.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Set integer value in custom tip input",
+    "steps": ["Click custom tip input", "Set field value: 55"],
+    "expected": "Custom input field shows value 55. Field is active (turquoise background).",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Set string value in custom tip input",
+    "steps": ["Click custom tip input", "Set field value: abc"],
+    "expected": "Only digits are allowed. Field is empty and not active.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Set floating value in custom tip input",
+    "steps": ["Click custom tip input", "Set field value: 30.5"],
+    "expected": "Only digits are allowed. Field shows 30 and is active.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Set value higher than 999 in custom tip input",
+    "steps": ["Click custom tip input", "Set field value: 9999"],
+    "expected": "Field has limit to 3 digits. Field shows 999.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Remove active state after clearing the custom tip input",
+    "steps": [
+      "Click custom tip input",
+      "Set field value: 7",
+      "Clear field value"
+    ],
+    "expected": "After step 2 field gets active. Clearing value removes active state.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Remove active state from a button after inserting the custom tip",
+    "steps": ["Click tip button 15%", "Set custom input value: 12"],
+    "expected": "After step 1, tip button 15% is active. Inserting custom input value removes active state from any tip buttons. Custom input becomes active.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Keep active state on tip button if inserted custom tip is invalid",
+    "steps": ["Click tip button 15%", "Set custom input value: abc"],
+    "expected": "If custom tip input is invalid (empty), previously active tip button stays active.",
+    "execution": "manual"
+  },
+  {
+    "section": "Number of people field",
+    "description": "Set integer value in Number of people field.",
+    "steps": ["Click Number of people field", "Set field value: 2"],
+    "expected": "Number of people field shows 2.",
+    "execution": "manual"
+  },
+  {
+    "section": "Number of people field",
+    "description": "Try to set float value in Number of people field",
+    "steps": ["Click Number of people field", "Set field value: 3.5"],
+    "expected": "Only positive integers allowed. Field gets red frame. Field shows typed value.",
+    "execution": "manual"
+  },
+  {
+    "section": "Number of people field",
+    "description": "Try to set value higher than 999 in Number of people field",
+    "steps": ["Click Number of people field", "Set field value: 9999"],
+    "expected": "Max value is 999. Digits exceeding 999 are not inserted.",
+    "execution": "manual"
+  },
+  {
+    "section": "Number of people field",
+    "description": "Try to set string value in Number of people field",
+    "steps": ["Click Number of people field", "Set field value: abc"],
+    "expected": "Only digits are allowed. Field empty. Invalid characters are not typed.",
+    "execution": "manual"
+  },
+  {
+    "section": "Number of people field",
+    "description": "Set 0 or negative value in Number of people field",
+    "steps": [
+      "Click Number of people field",
+      "Set field value: 0",
+      "Change field value to: -1"
+    ],
+    "expected": "Both 0 and -1 are invalid. Field gets red frame. Field shows typed values.",
+    "execution": "manual"
+  },
+  {
+    "section": "Number of people field",
+    "description": "Remove red frame after clearing the field or changing to positive integer",
+    "steps": [
+      "Click Number of people field",
+      "Set field value: 0",
+      "Clear the field",
+      "Set field value: -1",
+      "Change field value to: 1"
+    ],
+    "expected": "After step 2 and 4 frame is added (invalid values). Steps 3 and 5 remove the frame.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Field Total shows $0.00 if not all fields are filled",
+    "steps": [
+      "Set bill field value: 100 (leave tip section and number of people empty)",
+      "Set number of people field value: 2 (leave bill and tip section empty)",
+      "Click tip button 10% (leave bill and number of people empty)",
+      "Set custom tip input value: 15 (leave bill and number of people empty)",
+      "Try other combinations of filling 2 fields and leaving one empty"
+    ],
+    "expected": "After each step field Total shows $0.00. All fields must be filled to calculate total tip.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Field Total is calculated after filling all fields (Number of people last filled)",
+    "steps": [
+      "Set bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2"
+    ],
+    "expected": "After filling all fields, field Total shows $110.00.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Field Total is calculated after filling all fields (Tip section last filled - button)",
+    "steps": [
+      "Set Bill field value: 50",
+      "Set number of people field value: 4",
+      "Click tip button 10%"
+    ],
+    "expected": "After filling all fields, field Total shows $55.00",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Field Total is calculated after filling all fields (Tip section last filled - custom tip input)",
+    "steps": [
+      "Set Bill field value: 50",
+      "Set number of people field value: 4",
+      "Set custom tip input value: 30"
+    ],
+    "expected": "After filling all fields, field Total shows $65.00",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Field Total shows 2 decimals",
+    "steps": [
+      "Set Bill field value: 12.33",
+      "Set custom input value: 33",
+      "Set Number of people field value to: 3"
+    ],
+    "expected": "After filling all fields, field Total shows $16.40. The actual value is 16.3989, but field Total ceil value to 2 decimals.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Changing any field after all fields are filled recalculates Total",
+    "steps": [
+      "Set Bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2",
+      "Change Bill field value to: 200",
+      "Change Tip button to: 5%",
+      "Change Number of people field value to: 4"
+    ],
+    "expected": "After step 3 field Total shows $110.00. After step 4 field Total shows $220.00. After step 5 field Total shows $210.00. After step 6 field Total shows $210.00.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total",
+    "description": "Changing any field to invalid or empty value after all fields are filled sets Total to $0.00",
+    "steps": [
+      "Set Bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2",
+      "Clear Bill field",
+      "Set Bill field value to: 0",
+      "Set Bill field value to: 100",
+      "Clear Number of people field",
+      "Set Number of people field value to: 0"
+    ],
+    "expected": "After step 3 field Total shows $110.00. After step 4 field Total shows $0.00. After step 5 field Total still shows $0.00. After step 6 field Total shows $110.00 again. After step 7 field Total shows $0.00. After step 8 field Total still shows $0.00.",
+    "execution": "manual"
+  },
+
+  {
+    "section": "Calculate field Total per person",
+    "description": "Field Total per person shows $0.00 if not all fields are filled",
+    "steps": [
+      "Set bill field value: 100 (leave tip section and number of people empty)",
+      "Set number of people field value: 2 (leave bill and tip section empty)",
+      "Click tip button 10% (leave bill and number of people empty)",
+      "Set custom tip input value: 15 (leave bill and number of people empty)",
+      "Try other combinations of filling 2 fields and leaving one empty"
+    ],
+    "expected": "After each step field Total per person shows $0.00. All fields must be filled to calculate total per person.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total per person",
+    "description": "Field Total per person is calculated after field Total calculation",
+    "steps": [
+      "Set bill field value: 100",
+      "Set custom tip input: 45",
+      "Set number of people field value: 2"
+    ],
+    "expected": "After filling all fields, field Total per person shows $145.00 / 2 = $72.50.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total per person",
+    "description": "Field Total per person shows 2 decimals",
+    "steps": [
+      "Set Bill field value: 12.33",
+      "Set custom input value: 33",
+      "Set Number of people field value to: 3"
+    ],
+    "expected": "After filling all fields, field Total per person shows $16.40 / 3 = $5.47. The actual value is 5.4663, but field Total per person ceils value to 2 decimals.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total per person",
+    "description": "Changing any field after all fields are filled recalculates Total per person",
+    "steps": [
+      "Set Bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2",
+      "Change Bill field value to: 200",
+      "Change Tip button to: 5%",
+      "Change Number of people field value to: 4"
+    ],
+    "expected": "After step 3 field Total per person shows $110.00 / 2 = $55.00. After step 4 field Total per person shows $220.00 / 2 = $110.00. After step 5 field Total per person shows $210.00 / 2 = $105.00. After step 6 field Total per person shows $210.00 / 4 = $52.50.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate field Total per person",
+    "description": "Changing any field to invalid or empty value after all fields are filled sets Total per person to $0.00",
+    "steps": [
+      "Set Bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2",
+      "Clear Bill field",
+      "Set Bill field value to: 0",
+      "Set Bill field value to: 100",
+      "Clear Number of people field",
+      "Set Number of people field value to: 0"
+    ],
+    "expected": "After step 3 field Total per person shows $55.00. After step 4 field Total per person shows $0.00. After step 5 field Total per person still shows $0.00. After step 6 field Total per person shows $55.00 again. After step 7 field Total per person shows $0.00. After step 8 field Total per person still shows $0.00.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate tip amount per person",
+    "description": "Field Tip amount per person shows $0.00 if not all fields are filled",
+    "steps": [
+      "Set Bill field value to: 100 (leave tip section and number of people empty)",
+      "Set number of people field value: 2 (leave bill and tip section empty)",
+      "Click tip button 10% (leave bill and number of people empty)",
+      "Set custom tip input value: 15 (leave bill and number of people empty)",
+      "Try other combinations of filling 2 fields and leaving one empty"
+    ],
+    "expected": "After each step field Tip amount per person shows $0.00. All fields must be filled to calculate tip amount per person.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate tip amount per person",
+    "description": "Field Tip amount per person is calculated after field Total calculation",
+    "steps": [
+      "Set Bill field value: 100",
+      "Set custom tip input: 45",
+      "Set number of people field value: 2"
+    ],
+    "expected": "After filling all fields, field Tip amount per person shows $45.00 / 2 = $22.50.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate tip amount per person",
+    "description": "Field Tip amount per person shows 2 decimals",
+    "steps": [
+      "Set Bill field value: 12.33",
+      "Set custom input value: 33",
+      "Set Number of people field value to: 3"
+    ],
+    "expected": "After filling all fields, field Tip amount per person shows $4.07. The actual value is 4.0666, but field Tip amount per person ceils value to 2 decimals.",
+    "execution": "manual"
+  },
+  {
+    "section": "Calculate tip amount per person",
+    "description": "Changing any field after all fields are filled recalculates Tip amount per person",
+    "steps": [
+      "Set Bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2",
+      "Change Bill field value to: 200",
+      "Change Tip button to: 5%",
+      "Change Number of people field value to: 4"
+    ],
+    "expected": "After step 3 field Tip amount per person shows $10.00 / 2 = $5.00. After step 4 field Tip amount per person shows $20.00 / 2 = $10.00. After step 5 field Tip amount per person shows $10.00 / 2 = $5.00. After step 6 field Tip amount per person shows $10.00 / 4 = $2.50.",
+    "execution": "manual"
+  },
+  {
+    "section": "Reset button",
+    "description": "Reset button restores all fields default values",
+    "steps": [
+      "Set Bill field value: 100",
+      "Click tip button 10%",
+      "Set number of people field value: 2",
+      "Click Reset button"
+    ],
+    "expected": "After step 3 field Total shows $110.00 and field Total per person shows $55.00. After clicking Reset button, all fields are cleared, tip buttons and custom input are not active, fields of tip calculation show $0.00.",
+    "execution": "manual"
+  },
+  {
+    "section": "Reset button",
+    "description": "Reset button is enabled without all fields filled",
+    "steps": [
+      "Without filling any fields, click Reset button",
+      "Set Bill field value: 100, then click Reset button",
+      "Set number of people field value: 2, then click Reset button",
+      "Click tip button 10%, then click Reset button",
+      "Set custom tip input value: 15, then click Reset button"
+    ],
+    "expected": "In all steps, clicking Reset button clears all fields, tip buttons and custom input are not active, fields of tip calculation show $0.00.",
+    "execution": "manual"
+  },
+  {
+    "section": "api",
+    "description": "Test cases are loaded from external JSON file",
+    "steps": [
+      "Clear cache and hard reload page",
+      "Click test cases button",
+      "Open dev tools and go to Network tab",
+      "Check if test-cases.json file is loaded",
+      "Reload test cases page"
+    ],
+    "expected": "After step 2, test cases page is opened in new tab. After step 4, in Network tab test-cases.json file is visible with status 200. After step 5, test cases are generated again with status 304.",
+    "execution": "manual"
+  },
+  {
+    "section": "responsiveness",
+    "description": "Splitter app is responsive",
+    "steps": [
+      "Open dev tools and go to responsive mode",
+      "Set width to 375px (iPhone X)",
+      "Set width to 425px (Galaxy S5)",
+      "Set width to 768px (iPad)",
+      "Set width to 1024px (iPad Pro)",
+      "Set width to 1440px (laptop)",
+      "Set width to 2560px (4k)"
+    ],
+    "expected": "App is properly displayed on all screen sizes. There is no horizontal scroll. All elements are properly aligned. In mobile view (up to 425px width) tip buttons are in 2 rows and calculation section is below input section.",
+    "execution": "manual"
+  }
+]
