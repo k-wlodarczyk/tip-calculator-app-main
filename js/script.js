@@ -69,26 +69,37 @@ function calculateTipPerPerson() {
   return totalTip / people;
 }
 
+function presentValues(object) {
+  setCalculatedTotal(presentAsAmountValue(object.totalValue));
+  setCalculatedTip(presentAsAmountValue(object.tipValue));
+  setCalculatedTotalPerPerson(presentAsAmountValue(object.totalPerPerson));
+  setCalculatedTipPerPerson(presentAsAmountValue(object.tipPerPerson));
+}
+
+function calculateAndPresentTipValues() {
+  const totalValue = calculateTotalValue();
+  const totalPerPerson = calculateTotalPerPerson();
+  const tipValue = calculateTotalTipValue();
+  const tipPerPerson = calculateTipPerPerson();
+
+  presentValues({ totalValue, totalPerPerson, tipValue, tipPerPerson });
+}
+
 function checkIfCorrectBillInput() {
   let value = billEl.value;
   const cursorPos = billEl.selectionStart;
 
-  // Zamiana przecinka na kropkę
   value = value.replace(",", ".");
 
-  // Usuwamy wszystkie znaki nie będące cyfrą lub kropką
   value = value.replace(/[^0-9.]/g, "");
 
-  // Usuwamy wszystkie kropki oprócz pierwszej
   const firstDotIndex = value.indexOf(".");
   if (firstDotIndex !== -1) {
     value =
       value.slice(0, firstDotIndex + 1) +
-      // value.slice(firstDotIndex + 1).replace(/\./g, "");
       value.slice(firstDotIndex + 1).replace(/\./g, "");
   }
 
-  // Rozdzielamy części przed i po kropce
   const parts = value.split(".");
   let newValue = value;
 
@@ -105,11 +116,9 @@ function checkIfCorrectBillInput() {
     newValue = parts[0];
   }
 
-  // Nadpisujemy wartość tylko jeśli faktycznie się zmieniła
   if (billEl.value !== newValue) {
     billEl.value = newValue;
 
-    // Przywracamy kursora w miejscu, gdzie był (jeśli możliwe)
     billEl.setSelectionRange(cursorPos, cursorPos);
   }
 }
@@ -144,12 +153,7 @@ function selectedAnyBtnOrCustomInput() {
 
 function calcTip() {
   if (billAndPeopleCorrect() && selectedAnyBtnOrCustomInput()) {
-    setCalculatedTotal(presentAsAmountValue(calculateTotalValue()));
-    setCalculatedTip(presentAsAmountValue(calculateTotalTipValue()));
-    setCalculatedTotalPerPerson(
-      presentAsAmountValue(calculateTotalPerPerson())
-    );
-    setCalculatedTipPerPerson(presentAsAmountValue(calculateTipPerPerson()));
+    calculateAndPresentTipValues();
   } else {
     setCalculatedTotal("$0.00");
     setCalculatedTip("$0.00");
