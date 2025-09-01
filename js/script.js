@@ -203,10 +203,10 @@ tipButtonsEl.forEach((tipBtn) => {
 });
 
 customInputEl.addEventListener("input", () => {
-  clearActiveBtns();
   preventInsertOtherThanDigits(customInputEl);
   limitFieldValueToThreeDigits(customInputEl);
   if (customInputEl.value !== "") {
+    clearActiveBtns();
     customInputEl.classList.add("active");
     activeTipValue = parseInt(customInputEl.value) / 100;
   } else {
