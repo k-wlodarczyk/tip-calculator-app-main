@@ -28,7 +28,7 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="app-name">Splitter</h1>
+      <h1 class="app-name" data-cy="app-name">Splitter</h1>
     </header>
 
     <section class="container card-section">
@@ -66,23 +66,25 @@
                 id="bill"
                 min="1"
                 placeholder="0"
+                data-cy="bill-input"
               />
             </div>
           </div>
           <div class="bill-info-tips">
             <h3 class="select-tip-header">Select tip %</h3>
             <div class="bill-info-tips-btns">
-              <button class="btn tip-btn">5%</button>
-              <button class="btn tip-btn">10%</button>
-              <button class="btn tip-btn">15%</button>
-              <button class="btn tip-btn">25%</button>
-              <button class="btn tip-btn">50%</button>
+              <button class="btn tip-btn" data-cy="btn-5">5%</button>
+              <button class="btn tip-btn" data-cy="btn-10">10%</button>
+              <button class="btn tip-btn" data-cy="btn-15">15%</button>
+              <button class="btn tip-btn" data-cy="btn-25">25%</button>
+              <button class="btn tip-btn" data-cy="btn-50">50%</button>
               <input
                 type="text"
                 name="custom"
                 id="custom"
                 placeholder="custom"
                 class="btn custom-tip-input"
+                data-cy="custom-input-btn"
               />
             </div>
           </div>
@@ -114,6 +116,7 @@
                 id="people"
                 placeholder="0"
                 min="1"
+                data-cy="number-people-input"
               />
             </div>
           </div>
@@ -125,7 +128,11 @@
             <div class="calculated-tip-info-text">
               <p class="calculated-tip-info-text-header">Total (bill + tip)</p>
             </div>
-            <div class="calculated-tip-info-value" id="calculated-tip-total">
+            <div
+              class="calculated-tip-info-value"
+              id="calculated-tip-total"
+              data-cy="calculated-total"
+            >
               $0.00
             </div>
           </div>
@@ -136,6 +143,7 @@
             <div
               class="calculated-tip-info-value"
               id="calculated-tip-total-tip"
+              data-cy="calculated-tip"
             >
               $0.00
             </div>
@@ -149,6 +157,7 @@
             <div
               class="calculated-tip-info-value"
               id="calculated-tip-total-per-person"
+              data-cy="calculated-total-per-person"
             >
               $0.00
             </div>
@@ -161,20 +170,28 @@
             <div
               class="calculated-tip-info-value"
               id="calculated-tip-amount-per-person"
+              data-cy="calculated-tip-per-person"
             >
               $0.00
             </div>
           </div>
 
-          <button class="btn reset-btn">reset</button>
+          <button class="btn reset-btn" data-cy="reset">reset</button>
         </div>
       </div>
     </section>
     <!-- LINKS -->
     <section class="links-section container">
       <div class="links">
-        <a href="tests/test-cases.html" target="_blank" class="btn link-btn"
+        <a
+          href="tests/test-cases.html"
+          target="_blank"
+          class="btn link-btn"
+          data-cy="test-cases-link"
           >test cases</a
+        >
+        <a href="tests/bug-reports.html" target="_blank" class="btn link-btn"
+          >bug reports</a
         >
         <a
           href="https://github.com/k-wlodarczyk/tip-calculator-app-main"

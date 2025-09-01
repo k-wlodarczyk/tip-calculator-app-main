@@ -30,7 +30,7 @@
     "steps": [
       "Click Bill field",
       "Set field value: 3.3",
-      "Set field value: 3.3.3"
+      "Set field value: 3.3."
     ],
     "expected": "After step 1, Bill field shows value 3.3. After step 2, second decimal separator is not inserted. Bill field still shows value 3.3.",
     "execution": "manual"
@@ -44,14 +44,14 @@
   },
   {
     "section": "Bill field",
-    "description": "Try to set value higher than 999 999.99",
+    "description": "Try to set value higher than 99 999.99",
     "steps": [
       "Click Bill field",
-      "Set field value: 1 000 000",
+      "Set field value: 100 000",
       "Clear field value",
       "Start typing with .99 and then type 9s (9.99 -> 99.99 -> 999.99 ...)"
     ],
-    "expected": "There is no way to set value higher than 999 999.99. In step 2 max field value will be 100 000 and after step 4 will be 999 999.99.",
+    "expected": "Max value of the field is 99 999.99. After step 2 field shows 10 000. After step 4 field shows 99 999.99, another digits are not inserted.",
     "execution": "manual"
   },
   {
@@ -63,13 +63,16 @@
   },
   {
     "section": "Bill field",
-    "description": "Set value 0 or negative value in Bill field",
-    "steps": [
-      "Click Bill field",
-      "Set field value: 0",
-      "Change field value to: -1"
-    ],
-    "expected": "Bill field requires number higher than 0. After typing 0 or -1 field gets a red frame. Field shows typed value.",
+    "description": "Set value 0 in Bill field",
+    "steps": ["Click Bill field", "Set field value: 0"],
+    "expected": "Bill field requires number higher than 0. After typing field gets a red frame. Field shows 0.",
+    "execution": "manual"
+  },
+  {
+    "section": "Bill field",
+    "description": "Try to set negative value in Bill field",
+    "steps": ["Click Bill field", "Set field value: -1"],
+    "expected": "Character '-' is not allowed. The value shows 1.",
     "execution": "manual"
   },
   {
@@ -124,7 +127,7 @@
     "section": "Tip section",
     "description": "Set floating value in custom tip input",
     "steps": ["Click custom tip input", "Set field value: 30.5"],
-    "expected": "Only digits are allowed. Field shows 30 and is active.",
+    "expected": "Only digits are allowed. Field shows 305 and is active.",
     "execution": "manual"
   },
   {
@@ -170,7 +173,7 @@
     "section": "Number of people field",
     "description": "Try to set float value in Number of people field",
     "steps": ["Click Number of people field", "Set field value: 3.5"],
-    "expected": "Only positive integers allowed. Field gets red frame. Field shows typed value.",
+    "expected": "Only positive integers allowed. Other characters will be omitted. The field shows value 35.",
     "execution": "manual"
   },
   {
@@ -396,7 +399,7 @@
       "Set custom input value: 33",
       "Set Number of people field value to: 3"
     ],
-    "expected": "After filling all fields, field Tip amount per person shows $4.07. The actual value is 4.0666, but field Tip amount per person ceils value to 2 decimals.",
+    "expected": "After filling all fields, field Tip amount per person shows $4.07 / 3 = $1.36. The actual value is 1.3566, but field Tip amount per person ceils value to 2 decimals.",
     "execution": "manual"
   },
   {

@@ -1,0 +1,16 @@
+[
+  {
+    "section": "Bill field",
+    "description": "Set integer value in Bill field.",
+    "steps": ["Click Bill field", "Set field value: 3"],
+    "expected": "Bill field shows value 3.",
+    "execution": "manual"
+  },
+  {
+    "section": "Tip section",
+    "description": "Set a tip button active.",
+    "steps": ["Click any tip button"],
+    "expected": "After clicking a button, the button will change the background to turquoise.",
+    "execution": "manual"
+  }
+]

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter - bug reports</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+    <link rel="stylesheet" href="../css/test-cases.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="../index.html" class="btn link-btn" target="_blank">Main page</a>
+      <h1 class="app-name test-case-header">Splitter - bug reports</h1>
+    </header>
+
+    <section class="test-cases">
+      <div class="test-cases-window container">
+        <div class="test-areas">
+          <h2 class="test-case-area-header">Bug reports</h2>
+          <div class="test-case-container">
+            <div class="test-case-container-header">
+              <h3>Bug report <span class="test-case-number">id-1</span>:</h3>
+              <p>
+                Active state is removed from button after inserting invalid
+                value to custom input field
+              </p>
+            </div>
+            <div class="test-case-container-steps">
+              <h4 class="steps-header">Steps to reproduction:</h4>
+              <ol class="steps-list">
+                <li>Go to Splitter main page</li>
+                <li>Click any tip button (e.g. 10%)</li>
+                <li>Focus on custom tip input and insert letter: a</li>
+              </ol>
+            </div>
+            <div class="expected-result-section">
+              <h4 class="expected-result-header">Expected result:</h4>
+              <p>
+                After step 2, clicked button is active (other background).
+                Inserted value to custom input is invalid so clicked button is
+                still active. Custom input field is empty and not active.
+              </p>
+            </div>
+            <div class="expected-result-section">
+              <h4 class="expected-result-header">Actual result:</h4>
+              <p>
+                Custom tip field is empty and not active (correct), but active
+                state from selected button has been removed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
