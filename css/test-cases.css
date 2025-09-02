@@ -46,6 +46,10 @@
   background-color: hsl(180, 78%, 73%);
 }
 
+.test-case-container-header {
+  position: relative;
+}
+
 .test-case-header,
 .test-case-area-header {
   text-align: center;
@@ -54,6 +58,20 @@
 
 .test-case-header {
   margin-top: var(--spacing-6);
+}
+
+.test-case-execution {
+  background: rgb(255, 118, 69);
+  padding: var(--spacing-1) var(--spacing-2);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: auto;
+  letter-spacing: 0.5px;
+  border-radius: 5px;
+}
+
+.execution-automated {
+  background: rgb(0, 207, 0);
 }
 
 .test-case-container-header,

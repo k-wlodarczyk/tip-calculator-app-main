@@ -23,6 +23,9 @@ fetch("test-cases.json")
         <div class="test-case-container-header">
           <h3>Test case <span class="test-case-number">${index + 1}</span>:</h3>
           <p>${test.description}</p>
+          <span class="test-case-execution ${
+            test.execution === "automated" ? "execution-automated" : ""
+          } ">${test.execution === "manual" ? "manual" : "automated"}</span>
         </div>
         <div class="test-case-container-steps">
           <h4 class="steps-header">Steps:</h4>
