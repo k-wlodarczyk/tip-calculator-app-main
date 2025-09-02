@@ -25,7 +25,7 @@
   </head>
   <body>
     <header class="header">
-      <a href="../index.html" class="btn link-btn" target="_blank">Main page</a>
+      <a href="../index.html" class="btn link-btn">Main page</a>
       <h1 class="app-name test-case-header">Splitter - bug reports</h1>
     </header>
 
@@ -62,6 +62,39 @@
               <p>
                 Custom tip field is empty and not active (correct), but active
                 state from selected button has been removed.
+              </p>
+            </div>
+          </div>
+          <div class="test-case-container">
+            <div class="test-case-container-header">
+              <h3>Bug report <span class="test-case-number">id-2</span>:</h3>
+              <p>
+                Alphanumeric keyboard in mobile version after tapping Number of
+                people or custom tip input
+              </p>
+            </div>
+            <div class="test-case-container-steps">
+              <h4 class="steps-header">Steps to reproduction:</h4>
+              <ol class="steps-list">
+                <li>Open Splitter page in mobile device</li>
+                <li>Tap Bill field</li>
+                <li>Tap Number of people field</li>
+                <li>Tap Custom tip input (tip section)</li>
+              </ol>
+            </div>
+            <div class="expected-result-section">
+              <h4 class="expected-result-header">Expected result:</h4>
+              <p>
+                After tapping Bill field, a keyboard with only digits is showing
+                (correct), but after tapping Number of people or Custom tip
+                field, the opened keyboard is default alphanumeric.
+              </p>
+            </div>
+            <div class="expected-result-section">
+              <h4 class="expected-result-header">Actual result:</h4>
+              <p>
+                All given fields should have only digits keyboard after tapping
+                them.
               </p>
             </div>
           </div>
