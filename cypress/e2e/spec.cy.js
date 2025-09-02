@@ -240,7 +240,6 @@ describe("Tip section tests", () => {
     cy.get(customInputBtn).should("have.class", "active");
   });
 
-  // TODO: FIX THE BUG
   it("Keeps active state on a button after inserting invalid custom tip", () => {
     cy.get(tipBtn15).click();
     cy.get(customInputBtn).click().type("abc");
